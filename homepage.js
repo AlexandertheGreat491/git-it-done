@@ -4,7 +4,15 @@ var nameInputEl = document.querySelector("#username");
 // formSubmitHandler will be executed upon a form submission browser event.
 var formSubmitHandler = function(event) {
     event.preventDefault();
-    console.log(event);
+    //console.log(event);
+    var username = nameInputEl.value.trim();
+
+    if (username) {
+        getUserRepos(username);
+        nameInputEl.value = "";
+    } else {
+        alert("Please enter a GitHub username.");
+    }
 };
 
 userFormEl.addEventListener("submit",formSubmitHandler);
