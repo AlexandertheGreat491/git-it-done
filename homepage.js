@@ -1,7 +1,13 @@
 var getUserRepos = function() {
-    //console.log("function was called");
-    fetch("https://api.github.com/users/octocat/repos");
-    // Fetch API provides a specifc interface for fetching resoures.
-};
+    fetch("https://api.github.com/users/octocat/repos").then(function(response) {
+        response.json().then(function(data) {
+          console.log(data);
+        });
+      });
+    };
+
+// json() method formats the response as json.
+// then() method returns a Promise & takes up to 2 new arguments: callback functions for the success and failure cases of the Promise.
+// Promise object represents the eventual completion or failure of an asynchronous operation and its resulting value.
 
 getUserRepos();
