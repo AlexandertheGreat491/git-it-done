@@ -7,6 +7,8 @@ var formSubmitHandler = function(event) {
     console.log(event);
 };
 
+userFormEl.addEventListener("submit",formSubmitHandler);
+
 var getUserRepos = function(user) {
     // format the github api url
     var apiUrl = "https://api.github.com/users/" + user + "/repos";
