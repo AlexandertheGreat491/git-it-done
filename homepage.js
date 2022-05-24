@@ -25,6 +25,7 @@ var getUserRepos = function(user) {
     fetch(apiUrl).then(function(response){
         response.json().then(function(data){
             console.log(data);
+            displayRepos(data, user);
         });
     });
 };
@@ -33,4 +34,8 @@ var getUserRepos = function(user) {
 // then() method returns a Promise & takes up to 2 new arguments: callback functions for the success and failure cases of the Promise.
 // Promise object represents the eventual completion or failure of an asynchronous operation and its resulting value.
 
+var displayRepos = function(repos, searchTerm) {
+    console.log(repos);
+    console.log(searchTerm);
+}
 getUserRepos();
