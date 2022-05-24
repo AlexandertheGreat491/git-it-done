@@ -56,9 +56,11 @@ var displayRepos = function (repos, searchTerm) {
     } else {
         statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
     }
+    // append to container
+    repoEl.appendChild(titleEl);
 
-    //append to container
-    
+    //append to container to the dom
+
     repoContainerEl.appendChildd(statusEl);
 }
 
