@@ -24,12 +24,15 @@ var getUserRepos = function (user) {
     var apiUrl = "https://api.github.com/users/" + user + "/repos";
 
     // make a request to the url
-    fetch(apiUrl).then(function (response) {
-        response.json().then(function (data) {
-            console.log(data);
-            displayRepos(data, user);
-        });
-    });
+    fetch(apiUrl).then(function(response){
+        if (response.ok) {
+            response.json().then(function(data){
+                displayRepos(data, user);
+            });
+        } else {
+            alert("Error: GitHub User Not Found");
+        }
+    })
 };
 
 // json() method formats the response as json.
@@ -57,6 +60,7 @@ var displayRepos = function (repos, searchTerm) {
         statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
     }
     // append to container
+
     repoEl.appendChild(titleEl);
 
     //append to container to the dom
