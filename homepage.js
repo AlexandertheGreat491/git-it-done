@@ -2,6 +2,8 @@ var userFormEl = document.querySelector("#user-form");
 var nameInputEl = document.querySelector("#username");
 // These first two variables will help with handling form submissions.
 // formSubmitHandler will be executed upon a form submission browser event.
+var repoContainerEl = document.querySector("#repos-container");
+var repoSearchTerm = document.querySelector("#repo-search-term");
 var formSubmitHandler = function(event) {
     event.preventDefault();
     //console.log(event);
