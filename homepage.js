@@ -105,6 +105,11 @@ var displayRepos = function(repos, searchTerm) {
   }
 };
 
+ var buttonClickHandler = function(event) {
+     var language = event.target.getAttribute("data-language");
+     console.log(language);
+ }
+ 
 // add event listeners to forms
 userFormEl.addEventListener("submit", formSubmitHandler);
 languageButtonsEl.addEventListener("click", buttonClickHandler);
