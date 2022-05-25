@@ -17,7 +17,14 @@ var getRepoIssues = function(repo) {
       });
 
 var displayIssues = function(issues){
-
+// This loop will loop over the response data and create <a> element for each issue.
+for (var i = 0; i < issues.length; i++) {
+    // creates a link element to take users to the issue on github.
+var issueEl = document.createElement("a");
+issueEl.classList = "list-item flex-row justify-space-between align-center";
+issueEl.setAttribute("href", issue[i].html_url);
+issueEl.setAttribute("target", "_blank");
+}
 }
 }
 
