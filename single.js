@@ -23,7 +23,26 @@ for (var i = 0; i < issues.length; i++) {
 var issueEl = document.createElement("a");
 issueEl.classList = "list-item flex-row justify-space-between align-center";
 issueEl.setAttribute("href", issue[i].html_url);
+//html_url property links to the full issue on GitHub.
+//target="_blank" attribute in each <a> element opens the link in a new tab instead of replacing the current webpage.
 issueEl.setAttribute("target", "_blank");
+
+// creates span to hold issue title
+var titleEl = document.createElement("span");
+titleEl.textContent = issues[i].title;
+
+// appends to container
+var typeEl = document.createElement("span");
+
+// These conditions check if issue is an actual issue or a pull request.
+if (issues[i].pull_request) {
+    typeEl.textContent = "(Pull requestion)";
+} else {
+    typeEl.textContent = "(Issue)";
+}
+
+// appends to container
+issueEl.appendChild(typeEl);
 }
 }
 }
