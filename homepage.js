@@ -22,6 +22,16 @@ var formSubmitHandler = function(event) {
   }
 };
 
+var buttonClickHandler = function(event) {
+    var language = event.target.getAttribute("data-language");
+    if (language) {
+        getFeaturedRepos(language);
+
+        //clear old content
+        repoContainerEl.textContent = "";
+    }
+}
+
 var getUserRepos = function(user) {
   // format the github api url
   var apiUrl = "https://api.github.com/users/" + user + "/repos";
@@ -105,11 +115,8 @@ var displayRepos = function(repos, searchTerm) {
   }
 };
 
- var buttonClickHandler = function(event) {
-     var language = event.target.getAttribute("data-language");
-     console.log(language);
- }
  
+
 // add event listeners to forms
 userFormEl.addEventListener("submit", formSubmitHandler);
 languageButtonsEl.addEventListener("click", buttonClickHandler);
