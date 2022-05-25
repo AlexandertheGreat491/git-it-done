@@ -5,7 +5,7 @@ var limitWarningEl = document.querySelector("#limit-warning");
 var getRepoIssues = function(repo) {
   // format the github api url
   var apiUrl = "https://api.github.com/repos/" + repo + "/issues?direction=asc";
-
+// ? key=value format assigns the value to the url in this case it is issues.
   // make a get request to url
   fetch(apiUrl).then(function(response) {
     // request was successful
